@@ -1,4 +1,4 @@
-# Image Generation Flask App
+# stableDiffusion-API
 
 This is a Flask-based web application that generates images using the SDXL ImageGenerator library. Users can send prompts to the app and receive generated images in response.
 
@@ -56,13 +56,13 @@ To run this application, you need to have the following installed:
 - **Method:** GET
 - **Parameters:**
   - `prompt` (string, required): The prompt text for image generation.
-  - `count` (string, required): number of images in output.
+  - `count` (string, optional): number of images in output.
 
 - **Response:**
   - If successful:
     ```json
     {
-      "image": "base64_encoded_image_data"
+      "image": "https://replicate.delivery/pbxt/.."
     }
     ```
   - If an error occurs:
@@ -84,7 +84,7 @@ curl "http://localhost:5000/?prompt=beautiful%20landscape"
 Response:
 ```json
 {
-  "image": "base64_encoded_image_data_here"
+  "image": "https://replicate.delivery/pbxt/.."
 }
 ```
 
