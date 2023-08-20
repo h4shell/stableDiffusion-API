@@ -4,8 +4,6 @@ from sdxl import ImageGenerator
 
 
 def generateImage(data):
-    print(data)
-
     client = ImageGenerator()
     image = client.gen_image(data["prompt"], int(data['count']))
     return image
@@ -19,8 +17,9 @@ CORS(app, origins="*")
 def generate():
 
     if 'count' in request.args:
-        
-        count = request.args.get('count')
+        count = int(request.args.get('count'))
+        if count > 4:
+            count = 4
     else:
         count = 1
 
@@ -38,4 +37,4 @@ def generate():
         return jsonify({"status": False, "error": str(e)})
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=16668)
