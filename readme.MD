@@ -56,6 +56,8 @@ To run this application, you need to have the following installed:
 - **Method:** GET
 - **Parameters:**
   - `prompt` (string, required): The prompt text for image generation.
+  - `count` (string, required): number of images in output.
+
 - **Response:**
   - If successful:
     ```json

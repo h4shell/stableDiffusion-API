@@ -3,9 +3,11 @@ from flask_cors import CORS
 from sdxl import ImageGenerator
 
 
-def generateImage(prompt):
+def generateImage(data):
+    print(data)
+
     client = ImageGenerator()
-    image = client.gen_image(prompt, count= 3)
+    image = client.gen_image(data["prompt"], int(data['count']))
     return image
 
 
@@ -15,10 +17,21 @@ CORS(app, origins="*")
 
 @app.route("/")
 def generate():
+
+    if 'count' in request.args:
+        
+        count = request.args.get('count')
+    else:
+        count = 1
+
     prompt = request.args.get('prompt')
+    data = {
+        "prompt": prompt,
+        "count": count
+    }
     print(f'< ⌚ waiting >')
     try:
-        image = generateImage(prompt)
+        image = generateImage(data)
         print("< ✔ Image generated >")
         return jsonify(image)
     except Exception as e:
