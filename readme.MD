@@ -1,4 +1,4 @@
-# Image Generation Flask App
+# stableDiffusion-API
 
 This is a Flask-based web application that generates images using the SDXL ImageGenerator library. Users can send prompts to the app and receive generated images in response.
 
