@@ -84,7 +84,7 @@ curl "http://localhost:5000/?prompt=beautiful%20landscape"
 Response:
 ```json
 {
-  "image": "base64_encoded_image_data_here"
+  "image": "https://replicate.delivery/pbxt/.."
 }
 ```
 
