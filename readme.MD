@@ -62,7 +62,7 @@ To run this application, you need to have the following installed:
   - If successful:
     ```json
     {
-      "image": ""https://replicate.delivery/pbxt/.."
+      "image": "https://replicate.delivery/pbxt/.."
     }
     ```
   - If an error occurs:
